@@ -1,0 +1,130 @@
+2026-03-07 07:49:47 | INFO     | run:390 | ================================================================================
+2026-03-07 07:49:47 | INFO     | run:391 | DATA QUALITY PIPELINE STARTED
+2026-03-07 07:49:47 | INFO     | run:392 | ================================================================================
+2026-03-07 07:49:47 | INFO     | _load_configuration:89 | ================================================================================
+2026-03-07 07:49:47 | INFO     | _load_configuration:90 | Loading configuration file
+2026-03-07 07:49:47 | INFO     | _load_configuration:101 | Configuration loaded from: configs/dq_config.yaml
+2026-03-07 07:49:47 | DEBUG    | _load_configuration:102 | Config contents: {
+  "file_path": "data/raw/global_health_data.csv",
+  "chunk_size": 50000,
+  "parallel_processing": true,
+  "num_workers": 6,
+  "schema_path": "schemas/health_schema.json",
+  "validation_result_format": "SUMMARY",
+  "fail_on_error": false,
+  "skip_validation": false,
+  "enable_profiling": true,
+  "include_percentiles": true,
+  "include_value_counts": true,
+  "max_unique_for_counts": 50,
+  "generate_datadocs": true,
+  "datadocs_sample_size": 100000,
+  "output_dir": "outputs",
+  "save_chunk_reports": true,
+  "save_overall_report": true,
+  "generate_html_report": true,
+  "use_schema_dtypes": true,
+  "low_memory": true,
+  "memory_limit_per_worker_gb": 8,
+  "log_level": "INFO",
+  "log_to_file": true,
+  "log_dir": "logs",
+  "log_max_size_mb": 100,
+  "log_backup_count": 5,
+  "continue_on_chunk_error": true,
+  "save_error_details": true,
+  "max_retries": 2,
+  "auto_estimate_chunk_size": false,
+  "available_memory_gb": 64,
+  "csv_engine": "c",
+  "parse_dates": false,
+  "compression": null,
+  "progress_report_interval": 10,
+  "enable_performance_metrics": true,
+  "alert_threshold_failed_chunks_pct": 10,
+  "alert_threshold_failed_expectations_pct": 5
+}
+2026-03-07 07:49:47 | INFO     | _load_configuration:114 | ✓ Schema loaded from: schemas/health_schema.json
+2026-03-07 07:49:47 | INFO     | _load_configuration:115 |   Schema contains 22 columns
+2026-03-07 07:49:47 | INFO     | _load_configuration:132 | Data file found: data/raw/global_health_data.csv (128.00 MB)
+2026-03-07 07:49:47 | INFO     | _clean_output_directories:176 | Cleaning output directories from previous runs...
+2026-03-07 07:49:47 | INFO     | _clean_output_directories:191 |   Deleted 20 chunk reports
+2026-03-07 07:49:47 | INFO     | _clean_output_directories:211 |   Deleted 1 summary files
+2026-03-07 07:49:47 | INFO     | _clean_output_directories:218 |   Deleted Great Expectations directory (saves disk space)
+2026-03-07 07:49:47 | INFO     | _clean_output_directories:223 | Cleaned 21 old files
+2026-03-07 07:49:47 | INFO     | _create_output_directories:165 | Output directories created/verified
+2026-03-07 07:49:47 | INFO     | run:409 | ================================================================================
+2026-03-07 07:49:47 | INFO     | run:410 | PROCESSING DATA CHUNKS
+2026-03-07 07:49:47 | INFO     | run:411 | ================================================================================
+2026-03-07 07:49:47 | ERROR    | run:430 | Error during chunk processing: read_csv() got an unexpected keyword argument 'verbose'
+2026-03-07 07:49:47 | DEBUG    | run:431 | Traceback (most recent call last):
+  File "R:\Dummy_Project\dataQualityImproved\scripts\run_dq_pipeline.py", line 419, in run
+    for chunk_id, chunk in enumerate(chunk_iterator, start=1):
+  File "R:\Dummy_Project\dataQualityImproved\src\readers\csv_reader.py", line 49, in read_csv_in_chunks
+    chunk_iter = pd.read_csv(
+                 ^^^^^^^^^^^^
+TypeError: read_csv() got an unexpected keyword argument 'verbose'
+
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:360 | ================================================================================
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:361 | PIPELINE SUMMARY
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:362 | ================================================================================
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:363 | Total rows processed: 0
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:364 | Total chunks processed: 0
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:365 | Successful chunks: 0
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:366 | Failed chunks: 0
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:367 | Error chunks: 0
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:368 | Success rate: 0.0%
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:369 | Processing speed: 0.00 rows/sec
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:370 | Elapsed time: 0.07 seconds
+2026-03-07 07:49:47 | INFO     | _generate_overall_report:371 | ================================================================================
+2026-03-07 07:49:47 | INFO     | run:442 | ================================================================================
+2026-03-07 07:49:47 | INFO     | run:443 | Generating Great Expectations DataDocs...
+2026-03-07 07:49:47 | ERROR    | run:452 | Failed to generate DataDocs: [WinError 5] Access is denied: 'C:\\Users\\rajsh'
+2026-03-07 07:49:47 | DEBUG    | run:453 | Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\rajsh\\Downloads\\dataQualityImproved\\outputs\\great_expectations'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\rajsh\\Downloads\\dataQualityImproved\\outputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\rajsh\\Downloads\\dataQualityImproved'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\rajsh\\Downloads'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "R:\Dummy_Project\dataQualityImproved\scripts\run_dq_pipeline.py", line 445, in run
+    datadocs_path = generate_datadocs(
+                    ^^^^^^^^^^^^^^^^^^
+  File "R:\Dummy_Project\dataQualityImproved\src\reporting\datadocs_generator.py", line 42, in generate_datadocs
+    ge_root.mkdir(parents=True, exist_ok=True)
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\rajsh'
+
+2026-03-07 07:49:47 | INFO     | run:461 | ✓ Pipeline completed successfully
+2026-03-07 07:49:47 | INFO     | run:473 | Pipeline execution time: 0.10 seconds
+2026-03-07 07:49:47 | INFO     | run:474 | ================================================================================
