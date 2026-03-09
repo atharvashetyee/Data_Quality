@@ -1,0 +1,113 @@
+{
+  "Country": {
+    "dtype": "object",
+    "nullable_pct": 0,
+    "unique": false
+  },
+  "Year": {
+    "dtype": "int64",
+    "nullable_pct": 0,
+    "min": 1900,
+    "max": 2025
+  },
+  "Disease Name": {
+    "dtype": "object",
+    "nullable_pct": 0
+  },
+  "Disease Category": {
+    "dtype": "object",
+    "nullable_pct": 0
+  },
+  "Prevalence Rate": {
+    "dtype": "float64",
+    "nullable_pct": 0.05,
+    "min": 0,
+    "max": 100
+  },
+  "Incidence Rate": {
+    "dtype": "float64",
+    "nullable_pct": 0.05,
+    "min": 0,
+    "max": 100
+  },
+  "Mortality Rate": {
+    "dtype": "float64",
+    "nullable_pct": 0.05,
+    "min": 0,
+    "max": 100
+  },
+  "Age Group": {
+    "dtype": "object",
+    "nullable_pct": 0
+  },
+  "Gender": {
+    "dtype": "object",
+    "nullable_pct": 0
+  },
+  "Population Affected": {
+    "dtype": "int64",
+    "nullable_pct": 0,
+    "min": 0
+  },
+  "Healthcare Access": {
+    "dtype": "float64",
+    "nullable_pct": 0.1,
+    "min": 0,
+    "max": 1
+  },
+  "Doctors per 1000": {
+    "dtype": "float64",
+    "nullable_pct": 0.1,
+    "min": 0
+  },
+  "Hospital Beds per 1000": {
+    "dtype": "float64",
+    "nullable_pct": 0.1,
+    "min": 0
+  },
+  "Treatment Type": {
+    "dtype": "object",
+    "nullable_pct": 0.05
+  },
+  "Average Treatment Cost USD": {
+    "dtype": "int64",
+    "nullable_pct": 0.05,
+    "min": 0
+  },
+  "Availability of Vaccines Treatment": {
+    "dtype": "object",
+    "nullable_pct": 0
+  },
+  "Recovery Rate": {
+    "dtype": "float64",
+    "nullable_pct": 0.05,
+    "min": 0,
+    "max": 100
+  },
+  "DALYs": {
+    "dtype": "int64",
+    "nullable_pct": 0.1,
+    "min": 0
+  },
+  "Improvement in 5 Years": {
+    "dtype": "float64",
+    "nullable_pct": 0.1
+  },
+  "Per Capita IncomeUSD": {
+    "dtype": "int64",
+    "nullable_pct": 0,
+    "min": 0
+  },
+  "Education Index": {
+    "dtype": "float64",
+    "nullable_pct": 0.02,
+    "min": 0,
+    "max": 1
+  },
+  "Urbanization Rate": {
+    "dtype": "float64",
+    "nullable_pct": 0.02,
+    "min": 0,
+    "max": 100
+  }
+}
